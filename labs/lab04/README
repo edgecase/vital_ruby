@@ -37,11 +37,13 @@ three fields, delimited by colons:
 
   (3) The name of the presentor
 
+  (4) The category of the talk (e.g. Ruby, iPhone)
+
 Examples:
 
-1:Pascal's Principle:Jenny Titchmarsh
-2:Kinetic Theory of Gas:Amy Smith
-3:Schulung Fluid Templating:Elizabeth Gifford  
+1:Pascal's Principle:Jenny Titchmarsh:physics
+2:Kinetic Theory of Gas:Amy Smith:physics
+3:Naturalistic Healing:Bob Gifford:health
 
 
 Format for "votes.txt"
