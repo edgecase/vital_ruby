@@ -2,16 +2,19 @@
 
 require 'rake/clean'
 
-CLEAN.include("vital_ruby")
-
+DIR_FILE = "vital_ruby"
 TAR_FILE = "vital_ruby.tgz"
 ZIP_FILE = "vital_ruby.zip"
 
-file "vital_ruby" do
+CLEAN.include(DIR_FILE, TAR_FILE, ZIP_FILE)
+
+file DIR_FILE do
   sh "cp -r labs vital_ruby"
 end
 
-task :default => [TAR_FILE, ZIP_FILE]
+task :default => :package
+
+task :package => [TAR_FILE, ZIP_FILE]
 
 file TAR_FILE => ["vital_ruby"] do
   rm TAR_FILE rescue nil
