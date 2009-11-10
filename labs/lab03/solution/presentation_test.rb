@@ -25,4 +25,18 @@ class PresentationTest < Test::Unit::TestCase
     p.add_score(5)
     assert_equal 4.5, p.average_score
   end
+
+  def test_rejects_over_range_scores
+    p = Presentation.new("TITLE", "PRESENTER")
+    assert_raise(InvalidScoreError) do
+      p.add_score(6)
+    end
+  end
+
+  def test_rejects_under_range_scores
+    p = Presentation.new("TITLE", "PRESENTER")
+    assert_raise(InvalidScoreError) do
+      p.add_score(0)
+    end
+  end
 end

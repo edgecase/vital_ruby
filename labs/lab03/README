@@ -19,6 +19,9 @@ For this assignment,
         will be an integer from 1 to 5.
     (d) Be able to report its average score
 
+(2) The add_score method should raise an exception if the score is
+    less than 1 or greater than 5.
+
 Example:
 
     presentation = Presentation.new("How To Program in Ruby, "Ruby Hacker")

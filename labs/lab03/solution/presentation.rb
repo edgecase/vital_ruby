@@ -1,3 +1,7 @@
+class InvalidScoreError < StandardError
+end
+
+
 class Presentation
   attr_reader :title, :presenter
 
@@ -9,6 +13,7 @@ class Presentation
   end
 
   def add_score(n)
+    fail InvalidScoreError if n > 5 || n < 1
     @total += n
     @count += 1
   end
