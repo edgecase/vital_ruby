@@ -1,11 +1,9 @@
 #!/usr/bin/env ruby
 
 require 'rake/clean'
-require "rake/testtask"
 
-task :default => :test
+task :default => :spec
 
-Rake::TestTask.new(:test) do |t|
-  t.warning = true
-  t.test_files = FileList['*_test.rb']
+task :spec do
+  sh 'spec --color .'
 end
