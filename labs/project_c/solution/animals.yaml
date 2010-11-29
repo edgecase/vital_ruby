@@ -3,8 +3,12 @@
   "no": !ruby/object:Animal 
     name: mouse
   question: Is it a large animal?
-  "yes": !ruby/object:Animal 
-    name: elephant
+  "yes": !ruby/object:Question 
+    "no": !ruby/object:Animal 
+      name: horse
+    question: Does it have a trunk?
+    "yes": !ruby/object:Animal 
+      name: elephant
 question: Is it aquatic?
 "yes": !ruby/object:Question 
   "no": !ruby/object:Animal 
