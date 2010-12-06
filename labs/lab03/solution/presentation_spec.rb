@@ -24,7 +24,7 @@ describe Presentation do
     p = Presentation.new("TITLE", "PRESENTER")
     presentation.add_score(4)
     presentation.add_score(5)
-    presentation.average_score.should be_close(4.5, 0.001)
+    presentation.average_score.should be_within(0.001).of(4.5)
   end
 
   it "rejects too large scores with an error" do
