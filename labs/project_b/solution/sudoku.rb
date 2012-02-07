@@ -131,7 +131,7 @@ class Board
   def stuck?
     any? { |cell| cell.number.nil? && cell.available_numbers.size == 0 }
   end
-  
+
   # Provide a human readable version of the board in a grid format.
   def to_s
     encoding.
@@ -196,7 +196,7 @@ class Board
     while solve_one_easy_cell
     end
   end
-  
+
   # Find a cell with only one possibility and fill it.  Return true if
   # you are able to fill a square, otherwise return false.
   def solve_one_easy_cell
@@ -210,12 +210,12 @@ class Board
     end
     return false
   end
-  
+
   # Find a candidate cell for guessing.  The candidate must be an
   # unassigned cell.  Prefer cells with the fewest number of available
   # numbers (just to minimize backtracking).
   def find_candidate_for_guessing
-    unassigned_cells.sort_by { |cell| 
+    unassigned_cells.sort_by { |cell|
       [cell.available_numbers.size, to_s]
     }.first
   end
@@ -234,7 +234,7 @@ class Board
       alternatives.push([encoding, cell, n])
     end
   end
-  
+
   # Make a guess by pulling an alternative from the list of remembered
   # alternatives and.  The state of the board at the remembered
   # alternative is restored and the choice is made for that cell.
@@ -242,7 +242,7 @@ class Board
     state, cell, number = alternatives.pop
     parse(state)
     say "Guessing #{number} at #{cell}"
-    cell.number = number        
+    cell.number = number
   end
 
   # Define the groups of cells for this puzzle.  Override this method
@@ -320,7 +320,7 @@ class SudokuSolver
   def new_board(string)
     Board.new(true).parse(string)
   end
-  
+
   def solve(string)
       board = new_board(string)
       puts board
@@ -333,9 +333,9 @@ class SudokuSolver
   def run(args)
     if args.empty?
       puts "Usage: ruby sudoku.rb sud-files..."
-      exit 
+      exit
     end
-    
+
     args.each do |fn|
       puts "Solving #{fn} ----------------------------------------------"
       puts

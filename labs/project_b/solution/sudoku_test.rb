@@ -71,7 +71,7 @@ class GroupTest < Test::Unit::TestCase
     setup do
       @group = Group.new
     end
-    
+
     should 'exist' do
       assert_not_nil @group
     end
@@ -124,7 +124,7 @@ module Puzzles
     " 2  4 57 " +
     "  7  29  " +
     " 5 7   8 "
-  
+
   Evil =
     "  53 694 " +
     " 3 1    6" +
@@ -177,7 +177,7 @@ class BoardTest < Test::Unit::TestCase
       assert_equal "534678912672195348198342567" +
         "859761423426853791713924856" +
         "961537284287419635345286179",
-        board.encoding      
+        board.encoding
     end
 
     should 'solve the Wikipedia Puzzle with DOS line endings' do
@@ -188,7 +188,7 @@ class BoardTest < Test::Unit::TestCase
       assert_equal "534678912672195348198342567" +
         "859761423426853791713924856" +
         "961537284287419635345286179",
-        board.encoding      
+        board.encoding
     end
 
     should 'solve the Medium Puzzle' do
@@ -199,7 +199,7 @@ class BoardTest < Test::Unit::TestCase
       assert_equal "942187635368594127715236498" +
         "593478216476921853281365749" +
         "829643571137852964654719382",
-        board.encoding      
+        board.encoding
     end
 
     should 'solve the Evil Puzzle' do
@@ -210,7 +210,7 @@ class BoardTest < Test::Unit::TestCase
       assert_equal "285376941439125786176849235" +
         "752981364618734529394562817" +
         "567213498821497653943658172",
-        board.encoding      
+        board.encoding
     end
 
   end
@@ -218,18 +218,18 @@ end
 
 class SudokuSolverTest < Test::Unit::TestCase
   WikiPuzzleFile = '../puzzles/wiki.sud'
-      SOLUTION = %{5 3 4  6 7 8  9 1 2  
-6 7 2  1 9 5  3 4 8  
-1 9 8  3 4 2  5 6 7  
+      SOLUTION = %{5 3 4  6 7 8  9 1 2
+6 7 2  1 9 5  3 4 8
+1 9 8  3 4 2  5 6 7
 
-8 5 9  7 6 1  4 2 3  
-4 2 6  8 5 3  7 9 1  
-7 1 3  9 2 4  8 5 6  
+8 5 9  7 6 1  4 2 3
+4 2 6  8 5 3  7 9 1
+7 1 3  9 2 4  8 5 6
 
-9 6 1  5 3 7  2 8 4  
-2 8 7  4 1 9  6 3 5  
+9 6 1  5 3 7  2 8 4
+2 8 7  4 1 9  6 3 5
 3 4 5  2 8 6  1 7 9}
-      
+
 
   def redirect_output
     old_stdout = $stdout
@@ -255,7 +255,7 @@ class SudokuSolverTest < Test::Unit::TestCase
     should 'complain if no file given' do
       result = redirect_output do
         assert_raise(SystemExit) do
-          @solver.run([])          
+          @solver.run([])
         end
       end
       assert_match(/Usage:/, result)

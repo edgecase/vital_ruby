@@ -8,8 +8,9 @@ ZIP_FILE = "vital_ruby.zip"
 
 CLEAN.include(DIR_FILE, TAR_FILE, ZIP_FILE)
 
-file DIR_FILE do
+file DIR_FILE => [:docs] do
   sh "cp -r labs vital_ruby"
+  sh "cp -r html vital_ruby/html"
 end
 
 task :default => :package
