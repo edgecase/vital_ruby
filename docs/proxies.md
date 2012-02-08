@@ -74,10 +74,10 @@ Example:
 %hideon
 
 **shadow\_proxy\_test.rb**
-%code "labs/lab05/solution/read_only_proxy_test.rb"
+%code "labs/lab05/solution/shadow_proxy_test.rb"
 
 **shadow\_proxy.rb**
-%code "labs/lab05/solution/read_only_proxy.rb"
+%code "labs/lab05/solution/shadow_proxy.rb"
 
 %hideoff
 
